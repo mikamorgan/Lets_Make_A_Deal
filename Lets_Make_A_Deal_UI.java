@@ -33,6 +33,7 @@ public class Lets_Make_A_Deal_UI extends javax.swing.JFrame {
 
     /*
      * This method is called from within the constructor to initialize the form.
+     * Everything here is automatic from the Design layout
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -266,7 +267,8 @@ public class Lets_Make_A_Deal_UI extends javax.swing.JFrame {
                         .addComponent(filler9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, 0))
         );
-
+        
+        //Hide the keep, change, and play again buttons until the first selection has been made
         jButton4.setVisible(false);
         jButton5.setVisible(false);
         jButton6.setVisible(false);
@@ -274,8 +276,9 @@ public class Lets_Make_A_Deal_UI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //If the player selects the first door
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //Add a border around the selected door to emphasize it
+        //Add a border around the selected door to emphasize it and set the user selection
         jButton1.setBorderPainted(true);
         jButton1.setBorder(new LineBorder(Color.RED, 10));
         
@@ -284,11 +287,11 @@ public class Lets_Make_A_Deal_UI extends javax.swing.JFrame {
         //Reveal a goat and update instructions
         jTextPane2.setText("Oh, a goat has been revealed! Would you like to keep your door or change your selection?");
         if(door2.equals("goat")){
-            //jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png")));
+            jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png")));
             displayed = 2;
         }
         else{
-            //jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png"))); 
+            jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png"))); 
             displayed = 3;
         }
         
@@ -297,8 +300,9 @@ public class Lets_Make_A_Deal_UI extends javax.swing.JFrame {
         jButton5.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    //If the player selects the second door
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //Add a border around the selected door to emphasize it
+        //Add a border around the selected door to emphasize it and set the user selection
         jButton2.setBorderPainted(true);
         jButton2.setBorder(new LineBorder(Color.RED, 10));
         
@@ -307,11 +311,11 @@ public class Lets_Make_A_Deal_UI extends javax.swing.JFrame {
         //Reveal a goat and update instructions
         jTextPane2.setText("Oh, a goat has been revealed! Would you like to keep your door or change your selection?");
         if(door1.equals("goat")){
-            //jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png")));
+            jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png")));
             displayed = 1;
         }
         else{
-            //jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png")));
+            jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png")));
             displayed = 3;
         }
         
@@ -321,7 +325,7 @@ public class Lets_Make_A_Deal_UI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        //Add a border around the selected door to emphasize it
+        //Add a border around the selected door to emphasize it and set the selection
         jButton3.setBorderPainted(true);
         jButton3.setBorder(new LineBorder(Color.RED, 10));
         
@@ -330,11 +334,11 @@ public class Lets_Make_A_Deal_UI extends javax.swing.JFrame {
         //Reveal a goat and update instructions
         jTextPane2.setText("Oh, a goat has been revealed! Would you like to keep your door or change your selection?");
         if(door1.equals("goat")){
-            //jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png")));
+            jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png")));
             displayed = 1;
         }
         else{
-            //jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png")));
+            jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png")));
             displayed = 2;
         }
         
@@ -343,11 +347,13 @@ public class Lets_Make_A_Deal_UI extends javax.swing.JFrame {
         jButton5.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    //If the user decides to keep their original selection
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         //They decided to keep their original selection. Change nothing and display the ending
         endGame();
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    //If the user decides to change their original selection
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         //They decided to change their selection. Change selection variable and border,
         //then display ending
@@ -396,9 +402,9 @@ public class Lets_Make_A_Deal_UI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        //jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lmad_door.png")));
-        //jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lmad_door.png")));
-        //jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lmad_door.png")));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lmad_door.png")));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lmad_door.png")));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lmad_door.png")));
         
         jButton1.setBorderPainted(false);
         jButton2.setBorderPainted(false);
@@ -431,36 +437,36 @@ public class Lets_Make_A_Deal_UI extends javax.swing.JFrame {
         switch(selection){
             case "1": 
                 if(door1.equals("car")){
-                    //jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/car.png")));
+                    jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/car.png")));
                     jTextPane2.setText("You won! Woo!");
                     wins++;
                 }
                 else{
-                    //jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png")));
+                    jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png")));
                     jTextPane2.setText("Better luck next time");
                     losses++;
                 }
                 break;
             case "2": 
                 if(door2.equals("car")){
-                    //jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/car.png")));
+                    jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/car.png")));
                     jTextPane2.setText("You won! Woo!");
                     wins++;
                 }
                 else{
-                    //jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png")));
+                    jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png")));
                     jTextPane2.setText("Better luck next time");
                     losses++;
                 }
                 break;
             case "3": 
                 if(door3.equals("car")){
-                    //jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/car.png")));
+                    jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/car.png")));
                     jTextPane2.setText("You won! Woo!");
                     wins++;
                 }
                 else{
-                    //jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png")));
+                    jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goat.png")));
                     jTextPane2.setText("Better luck next time");
                     losses++;
                 }
